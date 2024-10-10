@@ -11,13 +11,15 @@
 	<p>See leht on tehtud õppetöö raames <a href="https://www.tlu.ee" target="_blank">Tallinna Ülikoolis</a> ja ei sisalda mingit *asjakohast* materjali.</p>
 	<hr>
 	<p>:3</p>
+	<h2>Eesti filmide tegelased</h2>
 	<ul>
 		<li> <a href="/">Avaleht</a></li>
-		<h2>Praegune ajahetk</h2>
-		<ul>
-			<li>Nädalapäev: <%= nowWD %></li>
-			<li>Kuupäev: <%= nowD %> </li>
-		</ul>
+		<li> <a href="/eestifilm">Eesti filmi avaleht</a></li>
+	</ul>
+	<ul>
+			<% persons.forEach(function(item){%>
+				<li><%= item.first_name %> <%= item.last_name %>, sündinud <%= item.birth_date %></li>
+				<% }); %>
 	</ul>
 </body>
 </html>
