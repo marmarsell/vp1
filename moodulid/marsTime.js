@@ -6,11 +6,19 @@ const weekDayNamesEt = ["Pühapäev","Esmaspäev","Teisipäev","Kolmapäev","Nel
 const dateEt = function(){
 	
 	let timeNow = new Date();
+	//let specDate = new Date("12-27-1939")
 	let dateNow = timeNow.getDate();
 	let monthNow = timeNow.getMonth();
 	let yearNow = timeNow.getFullYear();
 	let dateNowEt = dateNow + ". " + monthNamesEt[monthNow] + " " + yearNow;
 	return dateNowEt;
+}
+
+//kuupäeva formaatormasin
+const givenDateFormatted = function(gDate){
+	
+	let specDate = new Date(gDate);
+	return specDate.getDate() + ". " + monthNamesEt[specDate.getMonth()] + " " + specDate.getFullYear();
 }
 
 //eesti nädalapäev
@@ -42,4 +50,12 @@ const partOfDay = function(){
 	return dayPart;
 }
 
-module.exports = {monthNamesEt:monthNamesEt, weekDayNamesEt:weekDayNamesEt, dateEt:dateEt, weekDayEt:weekDayEt, partOfDay:partOfDay};
+const deltaTime = function(start, end){
+	let date1 = new Date(start);
+	let date2 = new Date(end);
+	let delta = date2.getTime() - date1.getTime();
+	let deltaDays = Math.round(delta / (1000 * 3600 * 24));
+	return deltaDays;
+}
+
+module.exports = {monthNamesEt:monthNamesEt, weekDayNamesEt:weekDayNamesEt, dateEt:dateEt, weekDayEt:weekDayEt, partOfDay:partOfDay, givenDateFormatted: givenDateFormatted, deltaTime: deltaTime};

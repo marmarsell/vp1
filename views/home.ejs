@@ -11,13 +11,15 @@
 	<h1>>Hello World_</h1>
 	<hr>
 	<p>See leht on tehtud õppetöö raames <a href="https://www.tlu.ee" target="_blank">Tallinna Ülikoolis</a> ja ei sisalda mingit *asjakohast* materjali.</p>
-	<h2>| <a href="/signup">Registreeri Veebisaidile</a> | <a href="/signin">Logi sisse</a> |</h2>
+	<h2>| <a href="/logout">Logi välja</a> |</h2>
+		<% userName.forEach(function(item){%>
+			<h3>Logitud sisse kui <%= item.first_name %></h3>
+		<% }); %>
 	<img src="../~rinde/media/photos/TLU_600x400/tlu_43.jpg" alt="Tallinna Ülikooli Hügieenlahendused">
 	<img src=https://j.gifs.com/Kr00Pd.gif>
 	<p>I like rocket science :3</p>
 	<p>Siin pidi olema kosmoseraketti plahvatuse gif, juhul kui seda ei ole palume pöörduda kõrvalkassasse või pakendis oleva infolehte abi poole.</p>
 	<hr>
-	<p>Kursuse algusest on läbinud <%= deathTimer%> päeva :o</p>
 	<p>Mul käib sellel kursusel mitu sõpra:</p>
 	<ul>
 		<li><a href=../~marcpuus>Marcus</a></li>
@@ -28,9 +30,12 @@
 	<ul>
 		<li> <a href="/timenow">Ajainfo</a></li>
 		<li> <a href="/vanasonad">Vanasõnad</a></li>
+		<li> <a href="/eestifilm">Eesti film</a></li>
 		<li> <a href="/regvisitDB">Registreeri oma külastus</a></li>
 		<li> <a href="/abkulalised">Super inimeste nimekiri</a></li>
-		<li> <a href="/photos/gallery">Galerii</a></li>
+		<li> <a href="/news">Uudiste avaleht</a></li>
+		<li> <a href="/photos">Fotode avaleht</a></li>
 	</ul>
+	<h2><a href="/EKSAMID">Eksamite avalehele</a></h2>
 </body>
 </html>

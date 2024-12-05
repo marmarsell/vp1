@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Marsell Kovalev, veebiprogrammeerimine 2024</title>
+</head>
+<body>
+	<div style="text-align: center;">
+		<img src="/images/vp_banner_2024.png" alt="Veebiprogrammeerimise 2024 aasta banner">
+	</div>
+	<ul>
+		<li><a href="/EKSAMID">Eksamite avalehele</a></li>
+	</ol>
+	<h2>Kokkuvõtte: <%= totalCounter %></h2>
+	<ul>
+	<% carList.forEach(function(car){ %>
+		<hr>
+		<li><h3><%= car.carnum %></h3></li>
+		<span><b>[</b>  esialgne mass: <%= car.weightin %>kg | postfaktum mass: <%= car.weightout %></span>kg ]
+		<p><b>| toodet jäetud: <%= car.weightin - car.weightout %>kg |</b></p>
+	<% }); %>
+	</ol>
+</body>
+</html>

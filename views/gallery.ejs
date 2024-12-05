@@ -3,6 +3,9 @@
 <head>
 	<meta charset="utf8">
 	<title>Marsell UwU</title>
+	<link rel="stylesheet" href="/style/gallery.css">
+	<link rel="stylesheet" href="/style/modal.css">
+	<script src="/script/gallery.js" defer></script>
 </head>
 <body>
 	<div style="text-align: center;">
@@ -11,26 +14,27 @@
 	<h1>>Hello World_</h1>
 	<hr>
 	<p>See leht on tehtud õppetöö raames <a href="https://www.tlu.ee" target="_blank">Tallinna Ülikoolis</a> ja ei sisalda mingit *asjakohast* materjali.</p>
-	<h2>| <a href="/signup">Registreeri Veebisaidile</a> | <a href="/signin">Logi sisse</a> |</h2>
+	<h2>| <a href="/home">Avalehele</a> |</h2>
 	<img src="../~rinde/media/photos/TLU_600x400/tlu_43.jpg" alt="Tallinna Ülikooli Hügieenlahendused">
 	<img src=https://j.gifs.com/Kr00Pd.gif>
 	<p>I like rocket science :3</p>
 	<p>Siin pidi olema kosmoseraketti plahvatuse gif, juhul kui seda ei ole palume pöörduda kõrvalkassasse või pakendis oleva infolehte abi poole.</p>
 	<hr>
-	<p>Kursuse algusest on läbinud <%= deathTimer%> päeva :o</p>
-	<p>Mul käib sellel kursusel mitu sõpra:</p>
-	<ul>
-		<li><a href=../~marcpuus>Marcus</a></li>
-		<li><a href=../~martkrip>Martin</a></li>
-	</ul>
-	<p>:3</p>
-	
-	<ul>
-		<li> <a href="/timenow">Ajainfo</a></li>
-		<li> <a href="/vanasonad">Vanasõnad</a></li>
-		<li> <a href="/regvisitDB">Registreeri oma külastus</a></li>
-		<li> <a href="/abkulalised">Super inimeste nimekiri</a></li>
-		<li> <a href="/photos/gallery">Galerii</a></li>
-	</ul>
+	<dialog id="modal" class="modalarea">
+		<span id="modalClose" class="modalclose">&tilde;</span>
+		<div class="modalhorizontal">
+			<div class="modalvertical">
+				<p id="modalCaption"></p>
+				<img id="modalImage" src="/pics/epty.png" alt="galeriipilt">
+			</div>
+		</div>
+	</dialog>
+	<p>Fotogalerii:</p>
+	<p><%- links %><p>
+	<div id="gallery" class="gallery">
+		<% listData.forEach(function(image){ %>
+			<img src="<%= image.href %>" alt="<%= image.alt %>" class="thumbs" data-filename="<%= image.fileName %>">
+		<% }); %>
+	</div>
 </body>
 </html>

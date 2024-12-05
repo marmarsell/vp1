@@ -1,0 +1,33 @@
+<html lang = "et"> 
+<head>
+	<meta charset="utf8">
+	<title>Marsell UwU</title>
+</head>
+<body>
+	<div style="text-align: center;">
+		<img src="/images/vp_banner_2024.png" alt="Veebiprogrammeerimise 2024 aasta banner">
+	</div>
+	<h1>>Hello World_</h1>
+	<hr>
+	<p>See leht on tehtud õppetöö raames <a href="https://www.tlu.ee" target="_blank">Tallinna Ülikoolis</a> ja ei sisalda mingit *asjakohast* materjali.</p>
+	<hr>
+	<p>:3</p>
+	<ul>
+		<li> <a href="/EKSAMID">Eksamite avaleht</a></li>
+		<h2>Pane oma nimi kirja</h2>
+		<form method="POST">
+			<label for="carSerial">Auto registratsiooni designaatornumber: </label>
+			<input type="text" id="carSerial" name="carSerial" placeholder="123ABC" value="<%= registration %>">
+			<br>
+			<label for="carWeightInit">Auto laaditud täaismass (kg):  </label>
+			<input type="text" id="carWeightInit" name="carWeightInit" placeholder="6210" value="<%= initmass %>">
+			<br>
+			<label for="carWeightFinal">Auto tühjendatud täaismass (kg):  </label>
+			<input type="text" id="carWeightFinal" name="carWeightFinal" placeholder="0621" value="<%= finalmass %>">
+			<br>
+			<input type="submit" id="regSubmit" name="regSubmit" value="Salvesta">
+		</form>
+		<p><%= msg %></p>
+	</ul>
+</body>
+</html>

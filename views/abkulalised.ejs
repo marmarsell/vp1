@@ -13,18 +13,14 @@
 	<p>See leht on tehtud õppetöö raames <a href="https://www.tlu.ee" target="_blank">Tallinna Ülikoolis</a> ja ei sisalda mingit *asjakohast* materjali.</p>
 	<hr>
 	<p>:3</p>
+	<h2>Külalised andmebaasis :3</h2>
 	<ul>
 		<li> <a href="/">Avaleht</a></li>
-		<h2>Pane oma nimi kirja</h2>
-		<form method="POST">
-			<label for="firstNameInput">Eesnimi: </label>
-			<input type="text" id="firstNameInput" name="firstNameInput" placeholder="Eesnimi ..." value="<%= firstName %>">
-			<br>
-			<label for="firstNameInput">Perekonnanimi: </label>
-			<input type="text" id="lastNameInput" name="lastNameInput" placeholder="Perekonnanimi ..." value="<%= lastName %>">
-			<input type="submit" id="regSubmit" name="regSubmit" value="Salvesta">
-		</form>
-		<p><%= notice %></p>
+	</ul>
+	<ul>
+			<% visitors.forEach(function(item){%>
+				<li><%= item.first_name %> <%= item.last_name %>, registreerinud <%= item.visit_time %></li>
+				<% }); %>
 	</ul>
 </body>
 </html>
